@@ -16,7 +16,7 @@ def get_data(data_path):
 
 def extract_mfcc(file_name):
     max_pad_len = 862
-    audio, sample_rate = librosa.load(file_name, res_type='kaiser_fast', duration=20)
+    audio, sample_rate = librosa.load(file_name, res_type='kaiser_fast', duration=16)
     mfccs = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
     pad_width = max_pad_len - mfccs.shape[1]
     mfccs = np.pad(mfccs, pad_width=((0, 0), (0, pad_width)), mode='constant')
@@ -46,5 +46,5 @@ if __name__ == '__main__' :
     data_path = '../data/audio_and_txt_files/'
     data_stretched = '../data/audio_and_txt_files/stretched/'
 
-    # main(data_path, 'labels.npy', 'features.npy')
+    main(data_path, 'labels.npy', 'features.npy')
     main(data_stretched, 'labels_stretched.npy', 'features_stretched.npy')
