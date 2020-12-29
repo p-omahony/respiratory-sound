@@ -45,6 +45,7 @@ if __name__ == '__main__' :
 
     data_path = '../data/audio_and_txt_files/'
     data_stretched = '../data/audio_and_txt_files/stretched/'
+    data_pitch_shifted = '../data/audio_and_txt_files/pitch_shifted/'
 
-    main(data_path, 'labels.npy', 'features.npy')
-    main(data_stretched, 'labels_stretched.npy', 'features_stretched.npy')
+    # main(data_path, 'labels.npy', 'features.npy')
+    main(data_pitch_shifted, 'labels_pitch_shifted.npy', 'features_pitch_shifted.npy')
